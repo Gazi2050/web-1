@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        video,
+        img {
+            width: 640px;
+            height: 360px;
+            border: 5px solid #333;
+            border-radius: 10px;
+            background-color: #000;
+        }
+
+        audio {
+            border: 2px solid black;
+            background-color: #e4e4e4;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .nav a {
+            color: aliceblue;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .media-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Item</a>
+    </div>
+    <div class="media-container">
+        <video controls autoplay loop muted poster src="assets/11901231_640_360_24fps.mp4"></video>
+        <img src="assets/img.jpg" alt="Image description">
+    </div>
+    <div>
+        <audio src="assets/180126-ambient-morning-chill-with-birds-21348.mp3" controls autoplay loop></audio>
+    </div>
+</body>
+
+</html>
