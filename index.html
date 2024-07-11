@@ -4,81 +4,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            background-color: black;
-            color: aliceblue;
-            font-family: Arial, Helvetica, sans-serif;
+        /* Reset and Global Styles */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        h1 {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            background-color: #000;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Main Sections Styles */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+        }
+
+        /* About Section Styles */
+        #about p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Portfolio Section Styles */
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
         }
 
-        video,
-        img {
-            width: 640px;
-            height: 360px;
-            border: 5px solid #333;
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Services Section Styles */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 30px;
             border-radius: 10px;
-            background-color: #000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        audio {
-            border: 2px solid black;
-            background-color: #e4e4e4;
-            border-radius: 5px;
-            margin-top: 5px;
+        .service:hover {
+            transform: translateY(-10px);
         }
 
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .nav a {
-            color: aliceblue;
-            text-decoration: none;
-            padding: 10px;
-            background-color: #333;
-            border-radius: 5px;
-        }
-
-        .media-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .service i {
+            font-size: 3em;
+            color: #333;
             margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Contact Section Styles */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        form button {
+            padding: 12px 30px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 
 <body>
-    <h1>Hello World</h1>
-    <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">Item</a>
-    </div>
-    <div class="media-container">
-        <video controls autoplay loop muted poster src="assets/11901231_640_360_24fps.mp4"></video>
-        <img src="assets/img.jpg" alt="Image description">
-    </div>
-    <div>
-        <audio src="assets/180126-ambient-morning-chill-with-birds-21348.mp3" controls autoplay loop></audio>
-    </div>
+    <header>
+        <div class="container">
+            <h1>John Doe</h1>
+            <p>Frontend Developer</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a passionate frontend developer with a focus on creating user-friendly interfaces. Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Sed dapibus leo et ornare posuere. Phasellus sit amet lorem quis
+                elit cursus vulputate.</p>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project4.jpg" alt="Project 4">
+                    <h3>Project 4</h3>
+                    <p>Description of Project 4</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus leo et ornare posuere.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus leo et ornare posuere.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus leo et ornare posuere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="#">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 John Doe. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
